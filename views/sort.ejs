@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sort Movies/Shows</title>
+</head>
+<body>
+  <h2>Sorted Movies/Shows by <%= sortBy %> (<%= order %>)</h2>
+  <p>
+    <a href="/sort?by=views&order=<%= order %>">Sort by Views</a> |
+    <a href="/sort?by=upvotes&order=<%= order %>">Sort by Upvotes</a> |
+    <a href="/sort?by=<%= sortBy %>&order=asc">Ascending</a> |
+    <a href="/sort?by=<%= sortBy %>&order=desc">Descending</a>
+  </p>
+  <table border="1" cellpadding="5">
+    <tr>
+      <th>Title</th>
+      <th>Views</th>
+      <th>Upvotes</th>
+    </tr>
+    <% items.forEach(function(item) { %>
+      <tr>
+        <td><%= item.title %></td>
+        <td><%= item.views %></td>
+        <td><%= item.upvotes %></td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
